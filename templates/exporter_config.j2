@@ -1,0 +1,8 @@
+{% if sensors_exporter_gpio_devices_config -%}
+gpio_devices:
+  {{ sensors_exporter_gpio_devices_config }}
+{%- endif %}
+{% if sensors_exporter_ads_devices_config -%}
+ads_devices:
+  {{ sensors_exporter_ads_devices_config }}
+{%- endif %}

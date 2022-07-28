@@ -1,0 +1,8 @@
+---
+- name: Sensors Exporter Service
+  ansible.builtin.systemd:
+    daemon_reload: yes
+    name: sensors-exporter
+    enabled: yes
+    state: restarted
+  become: true

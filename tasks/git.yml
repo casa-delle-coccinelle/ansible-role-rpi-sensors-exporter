@@ -1,0 +1,20 @@
+---
+
+- name: Clone sensors exporter repo using ssh key
+  ansible.builtin.git:
+    repo: "{{ exporter_repo_src }}"
+    dest: "{{ sensors_exporter_user_home_dir }}/rpi-sensors-exporter"
+    version: "{{ exporter_repo_version }}"
+    accept_hostkey: yes
+  when: git_key is defined
+  become: true
+  notify: Sensors Exporter Service
+
+- name: Clone sensors exporter repo 
+  ansible.builtin.git:
+    repo: "{{ exporter_repo_src }}"
+    dest: "{{ sensors_exporter_user_home_dir }}/rpi-sensors-exporter"
+    version: "{{ exporter_repo_version }}"
+  when: git_key is not defined
+  become: true
+  notify: Sensors Exporter Service

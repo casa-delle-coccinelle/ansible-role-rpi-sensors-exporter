@@ -1,0 +1,4 @@
+---
+- name: Enable I2C bus
+  command: raspi-config nonint do_i2c 0
+  become: true

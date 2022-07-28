@@ -1,0 +1,13 @@
+[Unit]
+Description=sensor-exporter service
+
+[Service]
+EnvironmentFile=/etc/default/sensors-exporter
+WorkingDirectory={{ sensors_exporter_user_home_dir }}/rpi-sensors-exporter
+ExecStart=/usr/bin/python exporter.py
+Restart=on-failure
+User={{ sensors_exporter_user_name }}
+Group={{ sensors_exporter_user_name }}
+
+[Install]
+WantedBy=multi-user.target

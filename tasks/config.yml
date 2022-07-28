@@ -1,0 +1,18 @@
+---
+- name: Create exporter config dir
+  ansible.builtin.file:
+    path: "{{ sensors_exporter_config_file_path }}" 
+    state: directory
+    owner: "{{ sensors_exporter_user_name }}"
+    group: "{{ sensors_exporter_user_name }}"
+  become: true
+
+- name: Create exporter config file, if defined
+  ansible.builtin.template:
+    src: exporter_config.j2
+    dest: "{{ sensors_exporter_config_file_path }}/{{ sensors_exporter_config_file_name }}"
+    owner: "{{ sensors_exporter_user_name }}"
+    group: "{{ sensors_exporter_user_name }}"
+  become: true
+  notify: Sensors Exporter Service
+

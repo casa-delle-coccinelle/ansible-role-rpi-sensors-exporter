@@ -1,0 +1,15 @@
+---
+- name: Install Python libraries for sensors with pip
+  pip:
+    name:
+    - adafruit-circuitpython-ads1x15 #ADS1115
+    - bme680
+    - git+https://github.com/adafruit/Adafruit_Python_BMP.git
+    - prometheus_client
+    - adafruit-circuitpython-bh1750
+    - git+https://github.com/casa-delle-coccinelle/Python_SI1145.git
+    - smbus2
+    - flask
+    - waitress
+    - PyYAML
+  become: true
