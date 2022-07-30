@@ -8,6 +8,7 @@ ExecStart=/usr/bin/python exporter.py
 Restart=on-failure
 User={{ sensors_exporter_user_name }}
 Group={{ sensors_exporter_user_name }}
+#TODO: Add /dev/mem read permissions to exporter user 
 
 [Install]
 WantedBy=multi-user.target

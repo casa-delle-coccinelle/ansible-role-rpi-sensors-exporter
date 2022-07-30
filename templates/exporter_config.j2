@@ -1,8 +1,8 @@
 {% if sensors_exporter_gpio_devices_config -%}
 gpio_devices:
-  {{ sensors_exporter_gpio_devices_config }}
+  {{ sensors_exporter_gpio_devices_config | indent(width=2, first=False) }}
 {%- endif %}
 {% if sensors_exporter_ads_devices_config -%}
 ads_devices:
-  {{ sensors_exporter_ads_devices_config }}
+  {{ sensors_exporter_ads_devices_config | indent(width=2, first=False) }}
 {%- endif %}
