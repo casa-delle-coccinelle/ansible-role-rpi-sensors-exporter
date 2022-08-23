@@ -2,17 +2,14 @@
 - name: Include apt packages install
   include_tasks: apt_install.yml
 
-- name: Include python libraries install tasks
-  include_tasks: lib_install.yml
+- name: Include pip install tasks
+  include_tasks: pip_install.yml
 
 - name: Include I2C configure tasks
   include_tasks: i2c.yml
 
 - name: Include os tasks
   include_tasks: os_tasks.yml
-
-- name: Include git tasks
-  include_tasks: git.yml
 
 - name: Include exporter config tasks
   include_tasks: config.yml

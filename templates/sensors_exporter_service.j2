@@ -2,9 +2,11 @@
 Description=sensor-exporter service
 
 [Service]
+{% if sensors_exporter_port is defined or (sensors_exporter_gpio_devices_config is defined or sensors_exporter_ads_devices_config is defined) %}
 EnvironmentFile=/etc/default/sensors-exporter
+{% endif %}
 WorkingDirectory={{ sensors_exporter_user_home_dir }}/rpi-sensors-exporter
-ExecStart=/usr/bin/python exporter.py
+ExecStart=/usr/bin/python -m rpi_sensors_exporter
 Restart=on-failure
 User={{ sensors_exporter_user_name }}
 Group={{ sensors_exporter_user_name }}

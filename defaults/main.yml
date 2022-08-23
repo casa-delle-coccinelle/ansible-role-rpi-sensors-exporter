@@ -1,6 +1,6 @@
 ---
-exporter_repo_src: "https://github.com/casa-delle-coccinelle/rpi-sensors-exporter.git"
-exporter_repo_version: 0.0.1
+sensors_exporter_src: "https://github.com/casa-delle-coccinelle/rpi-sensors-exporter"
+sensors_exporter_version: 0.0.1
 sensors_exporter_user_home_dir: '/opt/sensors-exporter'
 sensors_exporter_user_name: sensors-exporter
 sensors_exporter_config_file_path: '/etc/sensors-exporter'
