@@ -4,7 +4,7 @@
     src: environment.j2
     dest: /etc/default/sensors-exporter
   become: true
-  when: sensors_exporter_port is defined or (sensors_exporter_gpio_devices_config is defined or sensors_exporter_ads_devices_config is defined)
+  when: sensors_exporter_port is defined or (sensors_exporter_gpio_devices_config is defined or sensors_exporter_adc_devices_config is defined)
 
 - name: Create systemd service file
   ansible.builtin.template:

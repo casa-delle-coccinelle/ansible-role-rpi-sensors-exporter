@@ -13,7 +13,7 @@
 
 - name: Include exporter config tasks
   include_tasks: config.yml
-  when: sensors_exporter_gpio_devices_config is defined or sensors_exporter_ads_devices_config is defined
+  when: sensors_exporter_gpio_devices_config is defined or sensors_exporter_adc_devices_config is defined
 
 - name: Include systemd config tasks
   include_tasks: systemd.yml
