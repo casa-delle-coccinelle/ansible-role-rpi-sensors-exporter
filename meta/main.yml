@@ -1,0 +1,6 @@
+galaxy_info:
+  author: Aneliya Ivanova
+  description: role for configuration and installation of Raspberry PI sensors exporter
+  license: MIT
+  min_ansible_version: 2.9
+
