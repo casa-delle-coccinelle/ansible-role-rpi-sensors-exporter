@@ -6,6 +6,8 @@ sensors_exporter_user_name: sensors-exporter
 sensors_exporter_config_file_path: '/etc/sensors-exporter'
 sensors_exporter_config_file_name: 'config.yaml'
 sensors_exporter_port: 8080
+sensors_exporter_verbose_logs: false
+sensors_exporter_debug_logs: false
 #sensors_exporter_gpio_devices_config:
 #  - name: "mh-rd"
 #    type: "rain_drops"
