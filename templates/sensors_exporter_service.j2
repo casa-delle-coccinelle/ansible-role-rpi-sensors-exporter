@@ -5,7 +5,7 @@ Description=sensor-exporter service
 {% if sensors_exporter_port is defined or (sensors_exporter_gpio_devices_config is defined or sensors_exporter_adc_devices_config is defined) %}
 EnvironmentFile=/etc/default/sensors-exporter
 {% endif %}
-WorkingDirectory={{ sensors_exporter_user_home_dir }}/rpi-sensors-exporter
+WorkingDirectory={{ sensors_exporter_user_home_dir }}
 {% if sensors_exporter_debug_logs %}
 ExecStart=/usr/bin/python -m rpi_sensors_exporter -d
 {% elif sensors_exporter_verbose_logs %}
