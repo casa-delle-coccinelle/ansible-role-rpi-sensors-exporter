@@ -5,3 +5,4 @@
     name: "git+{{ sensors_exporter_src }}@{{ sensors_exporter_version }}"
   become: true
   notify: Sensors Exporter Service
+
