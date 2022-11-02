@@ -19,7 +19,7 @@ Ansible role for configuration and installation of Raspberry PI sensors exporter
 | sensors_exporter_verbose_logs | If true, exporter's log level will be set to INFO | false | No | 0.0.1 |
 | sensors_exporter_debug_logs | If true, exporter's log level will be set to DEBUG | false | No | 0.0.1 |
 | sensors_exporter_gpio_devices_config | Configuration for GPIO sensors, connected to the system. *See example bellow* | - | No | 0.0.1 |
-| sensors_exporter_adc_devices_config | Configuration for sensors, connected to ADC. *See example bellow* | - | No | 0.0.1 |
+| sensors_exporter_ads_devices_config | Configuration for sensors, connected to ADC. *See example bellow* | - | No | 0.0.1 |
 
 
 ### Usage
@@ -47,7 +47,7 @@ Bellow is example rpi-sensors-exporter.yaml playbook
       vars:
         sensors_exporter_port: 8081
         sensors_exporter_debug_logs: true
-        sensors_exporter_adc_devices_config: |
+        sensors_exporter_ads_devices_config: |
           - name: "capacitive-v1.2"
             type: "soil_moisture"
             analog_in: 0
@@ -61,5 +61,5 @@ Bellow is example rpi-sensors-exporter.yaml playbook
          - role: rpi-sensors-exporter
 
 
-**Note:** The role doesn't perform any configuration checks and sets sensors_exporter_adc_devices_config and sensors_exporter_gpio_devices_config variables as defined. If the configuration is not valid, the exporter will fail to start. For configuration requirements of the exporter, please refer to exporter's documentation - https://github.com/casa-delle-coccinelle/rpi-sensors-exporter/tree/master/docs
+**Note:** The role doesn't perform any configuration checks and sets sensors_exporter_ads_devices_config and sensors_exporter_gpio_devices_config variables as defined. If the configuration is not valid, the exporter will fail to start. For configuration requirements of the exporter, please refer to exporter's documentation - https://github.com/casa-delle-coccinelle/rpi-sensors-exporter/tree/master/docs
 
