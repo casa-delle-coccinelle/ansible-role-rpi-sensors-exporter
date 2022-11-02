@@ -1,6 +1,6 @@
 {% if sensors_exporter_port is defined %}
 SENSORS_EXPORTER_PORT={{ sensors_exporter_port }}
 {% endif %}
-{% if sensors_exporter_gpio_devices_config is defined or sensors_exporter_adc_devices_config is defined %}
+{% if sensors_exporter_gpio_devices_config is defined or sensors_exporter_ads_devices_config is defined %}
 SENSORS_EXPORTER_CONFIG={{ sensors_exporter_config_file_path }}/{{ sensors_exporter_config_file_name }}
 {% endif %}

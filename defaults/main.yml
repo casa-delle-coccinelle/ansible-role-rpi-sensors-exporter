@@ -12,7 +12,7 @@ sensors_exporter_debug_logs: false
 #  - name: "mh-rd"
 #    type: "rain_drops"
 #    pin: 26
-#sensors_exporter_adc_devices_config:
+#sensors_exporter_ads_devices_config:
 #  - name: "capacitive-v1.2"
 #    type: "soil_moisture"
 #    analog_in: 0
