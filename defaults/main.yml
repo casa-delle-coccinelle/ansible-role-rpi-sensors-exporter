@@ -1,0 +1,25 @@
+---
+sensors_exporter_src: "https://github.com/casa-delle-coccinelle/rpi-sensors-exporter"
+sensors_exporter_version: 0.0.1
+sensors_exporter_user_home_dir: '/opt/sensors-exporter'
+sensors_exporter_user_name: sensors-exporter
+sensors_exporter_config_file_path: '/etc/sensors-exporter'
+sensors_exporter_config_file_name: 'config.yaml'
+sensors_exporter_port: 8080
+sensors_exporter_verbose_logs: false
+sensors_exporter_debug_logs: false
+#sensors_exporter_gpio_devices_config:
+#  - name: "mh-rd"
+#    type: "rain_drops"
+#    pin: 26
+#sensors_exporter_ads_devices_config:
+#  - name: "capacitive-v1.2"
+#    type: "soil_moisture"
+#    analog_in: 0
+#    max_value: 32767
+#    min_value: 29498
+#  - name: "fc-28"
+#    type: "soil_moisture"
+#    analog_in: 1
+#    max_value: 32767
+#    min_value: 16726

@@ -1,0 +1,21 @@
+[Unit]
+Description=sensor-exporter service
+
+[Service]
+{% if sensors_exporter_port is defined or (sensors_exporter_gpio_devices_config is defined or sensors_exporter_ads_devices_config is defined) %}
+EnvironmentFile=/etc/default/sensors-exporter
+{% endif %}
+WorkingDirectory={{ sensors_exporter_user_home_dir }}
+{% if sensors_exporter_debug_logs %}
+ExecStart=/usr/bin/python -m rpi_sensors_exporter -d
+{% elif sensors_exporter_verbose_logs %}
+ExecStart=/usr/bin/python -m rpi_sensors_exporter -v
+{% else %}
+ExecStart=/usr/bin/python -m rpi_sensors_exporter
+{% endif %}
+Restart=on-failure
+User={{ sensors_exporter_user_name }}
+Group={{ sensors_exporter_user_name }}
+
+[Install]
+WantedBy=multi-user.target

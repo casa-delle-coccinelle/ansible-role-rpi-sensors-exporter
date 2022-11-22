@@ -1,0 +1,19 @@
+---
+- name: Include apt packages install
+  include_tasks: apt_install.yml
+
+- name: Include os tasks
+  include_tasks: os_tasks.yml
+
+- name: Include pip install tasks
+  include_tasks: pip_install.yml
+
+- name: Include I2C configure tasks
+  include_tasks: i2c.yml
+
+- name: Include exporter config tasks
+  include_tasks: config.yml
+  when: sensors_exporter_gpio_devices_config is defined or sensors_exporter_ads_devices_config is defined
+
+- name: Include systemd config tasks
+  include_tasks: systemd.yml

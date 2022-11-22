@@ -1,0 +1,41 @@
+---
+# The user should be able to read /dev/mem and /dev/i2c-* 
+- name: Create exporter user
+  ansible.builtin.user:
+    name: "{{ sensors_exporter_user_name }}"
+    home: "{{ sensors_exporter_user_home_dir }}"
+    shell: /usr/sbin/nologin
+    append: yes
+    groups:
+      - gpio
+      - i2c
+  become: true
+
+- name: Create ssh dir
+  ansible.builtin.file:
+    path: /root/.ssh
+    state: directory
+    owner: root
+    group: root
+  when: git_key is defined
+  become: true
+
+- name: Add SSH key if defined
+  ansible.builtin.copy:
+    content: "{{ git_key }}"
+    dest: /root/.ssh/git_key
+    owner: root
+    group: root
+    mode: 0600
+  when: git_key is defined
+  become: true
+
+- name: Create ssh config
+  ansible.builtin.copy:
+    src: ssh_config
+    dest: /root/.ssh/config
+    owner: root
+    group: root
+    mode: 0600
+  when: git_key is defined
+  become: true

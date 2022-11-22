@@ -1,0 +1,10 @@
+---
+- name: Install apt packages
+  ansible.builtin.apt:
+    pkg:
+    - python3-smbus
+    - i2c-tools
+    - pip
+    - git
+    update_cache: yes
+  become: true
